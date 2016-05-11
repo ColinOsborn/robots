@@ -34,8 +34,13 @@ class RobotWorldApp < Sinatra::Base
 
   put '/robots/:id' do |id|
     robot_repository.update(id.to_i, params[:robot])
-    redirect "/robots#{id}"
-  end 
+    redirect "/robots/#{id}"
+  end
+
+  delete '/robots/:id' do |id|
+    robot_repository.destroy(id.to_i)
+    redirect "/robots"
+  end
 
   def robot_repository
     database = YAML::Store.new('db/robot_repository')

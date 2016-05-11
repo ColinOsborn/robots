@@ -8,4 +8,28 @@ robots:
   birthdate: ''
   date_hired: ''
   department: ''
-total: 1
+- id: 2
+  name: Colin
+  city: Colin
+  state: Colorado
+  avatar: https://robohash.org/colin
+  birthdate: 10/18/1988
+  date_hired: 3/1/2016
+  department: Mountain Bikes
+- id: 3
+  name: Calle
+  city: Calle
+  state: Sweden
+  avatar: https://robohash.org/Calle
+  birthdate: 04/09/1980
+  date_hired: 1/1/12
+  department: Reklambra
+- id: 4
+  name: Kalan
+  city: CO Springs
+  state: Colorado
+  avatar: https://robohash.org/Kalan
+  birthdate: 11/20/1983
+  date_hired: 3/1/2011
+  department: Plants
+total: 4
