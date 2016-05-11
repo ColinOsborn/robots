@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <title></title>
+</head>
+<body>
+  <div class="container">
+  <h1> <%= @robot.name %> </h1>
 
-    <h1> <%= @robot.name %> </h1>
-
-    <a href="/robots"> Robot Index</a>
-
-  </body>
+  <a href="/robots"> Robot Index</a>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src='js/bootstrap.js'></script>
+</body>
 </html>

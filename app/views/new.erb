@@ -1,11 +1,32 @@
-<form action = "/robots" method = "post">
-  <p>Create a New Robot:</p>
-  <input type="text" name="robot[name]" placeholder="Name">
-  <input type="text" name="robot[city]" placeholder="City">
-  <input type="text" name="robot[state]" placeholder="State">
-  <input type="text" name="robot[avatar]" placeholder="Avatar">
-  <input type="text" name="robot[birthdate]" placeholder="Birthdate">
-  <input type="text" name="robot[date_hired]" placeholder="Date Hired">
-  <input type="text" name="robot[department]" placeholder="Department">
-  <input type='submit'/>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <title></title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="input-group">
+      <form action = "/robots" method = "post">
+        <h3>Create a New Robot:</h3>
+        <input type="text" class="form-control" name="robot[name]" placeholder="Name">
+        <input type="text" class="form-control" name="robot[city]" placeholder="City">
+        <input type="text" class="form-control" name="robot[state]" placeholder="State">
+        <input type="text" class="form-control" name="robot[avatar]" placeholder="Avatar">
+        <input type="text" class="form-control" name="robot[birthdate]" placeholder="Birthdate">
+        <input type="text" class="form-control" name="robot[date_hired]" placeholder="Date Hired">
+        <input type="text" class="form-control" name="robot[department]" placeholder="Department">
+        <input type='submit'/>
+      </form>
+      
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src='js/bootstrap.js'></script>
+</body>
+</html>

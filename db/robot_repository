@@ -1,16 +1,16 @@
 ---
 robots:
 - id: 1
-  name: John
-  city: John
-  state: ''
-  avatar: ''
-  birthdate: ''
-  date_hired: ''
-  department: ''
+  name: Fredrik
+  city: Stockholm
+  state: Sweden
+  avatar: https://robohash.org/Fredrik
+  birthdate: 05/16/1980
+  date_hired: 08/04/2008
+  department: Skaggis
 - id: 2
   name: Colin
-  city: Colin
+  city: Carbondale
   state: Colorado
   avatar: https://robohash.org/colin
   birthdate: 10/18/1988
@@ -18,7 +18,7 @@ robots:
   department: Mountain Bikes
 - id: 3
   name: Calle
-  city: Calle
+  city: Stockholm
   state: Sweden
   avatar: https://robohash.org/Calle
   birthdate: 04/09/1980
