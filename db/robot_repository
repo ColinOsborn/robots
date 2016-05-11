@@ -1,0 +1,11 @@
+---
+robots:
+- id: 1
+  name: John
+  city: John
+  state: ''
+  avatar: ''
+  birthdate: ''
+  date_hired: ''
+  department: ''
+total: 1
