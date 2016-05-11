@@ -1,11 +1,5 @@
 class Robot
-  attr_reader :id,
-              :name,
-              :city,
-              :state,
-              :avatar,
-              :birthdate,
-              :date_hired,
+  attr_reader :id, :name, :city, :state, :avatar, :birthdate, :date_hired,
               :department
 
   def initialize(data)
@@ -18,6 +12,5 @@ class Robot
     @date_hired = data["date_hired"]
     @department = data["department"]
   end
-
 
 end

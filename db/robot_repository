@@ -1,13 +1,5 @@
 ---
 robots:
-- id: 1
-  name: Fredrik
-  city: Stockholm
-  state: Sweden
-  avatar: https://robohash.org/Fredrik
-  birthdate: 05/16/1980
-  date_hired: 08/04/2008
-  department: Skaggis
 - id: 2
   name: Colin
   city: Carbondale
@@ -32,4 +24,20 @@ robots:
   birthdate: 11/20/1983
   date_hired: 3/1/2011
   department: Plants
-total: 4
+- id: 5
+  name: Fredrik
+  city: Nacka
+  state: Sweden
+  avatar: https://robohash.org/Fredrik
+  birthdate: 05/16/1980
+  date_hired: 08/04/2008
+  department: Skaggis
+- id: 6
+  name: Rhiannon
+  city: Portland
+  state: Oregon
+  avatar: https://robohash.org/Rhiannon
+  birthdate: 03/19/1978
+  date_hired: 02/13/2016
+  department: Developer
+total: 6

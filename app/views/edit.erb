@@ -7,22 +7,24 @@
   <title></title>
 </head>
 <body>
-  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
 
-    <form action="/robots/ <%= @robot.id %>" method="post">
-      <h3>Edit your Robots</h3>
-      <input type="hidden" name="_method" value="PUT">
+      <form action="/robots/ <%= @robot.id %>" method="post">
+        <h3>Edit your Robots</h3>
+        <input type="hidden" name="_method" value="PUT">
 
-      <input type="text" name="robot[name]" placeholder="Name">
-      <input type="text" name="robot[city]" placeholder="City">
-      <input type="text" name="robot[state]" placeholder="State">
-      <input type="text" name="robot[avatar]" placeholder="Avatar">
-      <input type="text" name="robot[birthdate]" placeholder="Birthdate">
-      <input type="text" name="robot[date_hired]" placeholder="Date Hired">
-      <input type="text" name="robot[department]" placeholder="Department">
-      <input type='submit'/>
+        <input type="text" name="robot[name]" placeholder="Name">
+        <input type="text" name="robot[city]" placeholder="City">
+        <input type="text" name="robot[state]" placeholder="State">
+        <input type="text" name="robot[avatar]" placeholder="Avatar">
+        <input type="text" name="robot[birthdate]" placeholder="Birthdate">
+        <input type="text" name="robot[date_hired]" placeholder="Date Hired">
+        <input type="text" name="robot[department]" placeholder="Department">
+        <input type='submit'/>
 
-    </form>
+      </form>
+    </div>
   </div>
 
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
