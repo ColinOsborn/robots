@@ -52,4 +52,11 @@ class RobotRepository
       database["robots"].delete_if { |robot| robot["id"] == id }
     end
   end
+
+  def delete_all
+    database.transaction do
+      database['robots'] = []
+      database['total'] = 0
+    end
+  end
 end
