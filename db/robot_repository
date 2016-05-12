@@ -48,4 +48,12 @@ robots:
   birthdate: 08/05/1985
   date_hired: 04/10/2012
   department: Bunny
-total: 7
+- id: 8
+  name: Kimi Raikkonen
+  city: Espoo
+  state: Finland
+  avatar: https://robohash.org/KimiRaikkonen
+  birthdate: 10/17/1979
+  date_hired: 01/01/2001
+  department: The Ice Man
+total: 8
