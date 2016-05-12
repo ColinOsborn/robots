@@ -40,9 +40,9 @@ class RobotRepository
       target_robot["name"] = robot[:name]
       target_robot["city"] = robot[:city]
       target_robot["state"] = robot[:state]
-      target_robot["avatar"] = robot[:avatar]
-      target_robot["birthdate"] = robot[:birthdate]
-      target_robot["date_hired"] = robot[:date_hired]
+      target_robot["avatar"] = "https://robohash.org/#{:name}.png"
+      target_robot["birthdate"] = Time.parse(robot[:birthdate])
+      target_robot["date_hired"] = Time.parse(robot[:date_hired])
       target_robot["department"] = robot[:department]
     end
   end
