@@ -14,18 +14,12 @@ class RobotRepository
     table.insert(name: robot[:name], city: robot[:city], state: robot[:state], avatar: robot[:avatar], birthdate: robot[:birthdate], date_hired: robot[:date_hired], department: robot[:department])
   end
 
-  # def raw_robots
-  #   database.transaction do
-  #     database['robots'] || []
-  #   end
-  # end
-
   def all
     table.to_a.map { |robot| Robot.new(robot)}
   end
 
   def raw_robot(id)
-    table.where(:id => id).to_a.first
+    locate_robot(id).to_a.first
   end
 
   def find(id)
@@ -33,14 +27,18 @@ class RobotRepository
   end
 
   def update(id, data)
-    table.where(:id => id).update(data)
+    locate_robot(id).update(data)
   end
 
   def destroy(id)
-    table.where(:id => id).delete
+    locate_robot(id).delete
   end
 
   def delete_all
     table.delete
+  end
+
+  def locate_robot(id)
+    table.where(:id => id)
   end
 end

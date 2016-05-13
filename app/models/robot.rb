@@ -1,5 +1,5 @@
 class Robot
-  attr_reader :id, :name, :city, :state, :avatar, :birthdate, :date_hired,
+  attr_reader :id, :name, :city, :state, :birthdate, :date_hired,
               :department
 
   def initialize(data)
@@ -11,5 +11,9 @@ class Robot
     @birthdate = data[:birthdate]
     @date_hired = data[:date_hired]
     @department = data[:department]
+  end
+
+  def avatar
+    "https://robohash.org/#{self.name}.png"
   end
 end

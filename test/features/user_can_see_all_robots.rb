@@ -5,7 +5,6 @@ class UserCanSeeAllRobots < FeatureTest
 
   def test_user_can_see_all_robots
     robot_repository.create({
-      :id => 1,
       :name => "Sebastian Vettel",
       :city => "Happenheim",
       :state => "Germany",
@@ -16,7 +15,6 @@ class UserCanSeeAllRobots < FeatureTest
       })
 
     robot_repository.create({
-      :id => 2,
       :name => "Fernando Alonso",
       :city => "Jerez",
       :state => "Spain",
@@ -30,6 +28,7 @@ class UserCanSeeAllRobots < FeatureTest
 
       assert page.has_content?("1")
       assert page.has_content?("Sebastian Vettel")
+      save_and_open_page
       assert page.has_content?("2")
       assert page.has_content?("Fernando Alonso")
     end

@@ -14,8 +14,8 @@ class RobotWorldApp < Sinatra::Base
   end
 
   post '/robots' do
-    robot_repository.create(params[:robot])
-    redirect '/robots'
+    robot_id = robot_repository.create(params[:robot])
+    redirect "/robots/#{robot_id}"
   end
 
   get '/robots/:id' do |id|
