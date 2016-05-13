@@ -4,7 +4,7 @@ class RobotRepositoryTest < Minitest::Test
   include TestHelpers
 
   def test_it_creates_a_robot
-    robot_repository.create({
+    robot_id = robot_repository.create({
       :id => 1,
       :name => "Sebastian Vettel",
       :city => "Happenheim",
@@ -15,7 +15,7 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-      robot = robot_repository.find(1)
+      robot = robot_repository.find(robot_id)
 
       assert_equal "Sebastian Vettel", robot.name
       assert_equal "Happenheim", robot.city
@@ -24,11 +24,11 @@ class RobotRepositoryTest < Minitest::Test
       assert_equal "07/03/1987", robot.birthdate
       assert_equal "01/01/2007", robot.date_hired
       assert_equal "F1 Driver Robot", robot.department
-      assert_equal 1, robot.id
+      assert_equal robot_id, robot.id
   end
 
   def test_we_can_find_all_robots
-    robot_repository.create({
+    robot_id = robot_repository.create({
       :id => 1,
       :name => "Sebastian Vettel",
       :city => "Happenheim",
@@ -39,26 +39,25 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(1)
+    robot = robot_repository.find(robot_id)
 
-    robot_repository.create({
-      "id" => 2,
-      "name" => "Fernando",
-      "city" => "Jerez",
-      "state" => "Spain",
-      "avatar" => "https://robohash.org/Fernando",
-      "birthdate" => "07/29/1981",
-      "date_hired" => "01/01/2004",
-      "department" => "F1 Driver Robot"
+    robot_id = robot_repository.create({
+      :id => 2,
+      :name => "Fernando",
+      :city => "Jerez",
+      :state => "Spain",
+      :avatar => "https://robohash.org/Fernando",
+      :birthdate => "07/29/1981",
+      :date_hired => "01/01/2004",
+      :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(2)
+    robot = robot_repository.find(robot_id)
     assert_equal 2, robot_repository.all.length
   end
 
   def test_we_can_find_a_single_robot
-    robot_repository.create({
-      :id => 1,
+    robot_id1 = robot_repository.create({
       :name => "Sebastian Vettel",
       :city => "Happenheim",
       :state => "Germany",
@@ -68,10 +67,9 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(1)
+    robot = robot_repository.find(robot_id1)
 
-    robot_repository.create({
-      :id => 2,
+    robot_id = robot_repository.create({
       :name => "Fernando Alonso",
       :city => "Jerez",
       :state => "Spain",
@@ -81,19 +79,17 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(2)
+    robot = robot_repository.find(robot_id)
 
-    assert_equal "Sebastian Vettel", robot_repository.find(1).name
-    assert_equal "Fernando Alonso", robot_repository.find(2).name
-    assert_equal "Spain", robot_repository.find(2).state
-    assert_equal "01/01/2007", robot_repository.find(1).date_hired
-    assert_equal "F1 Driver Robot", robot_repository.find(1).department
+    assert_equal "Sebastian Vettel", robot_repository.find(robot_id1).name
+    assert_equal "Fernando Alonso", robot_repository.find(robot_id).name
+    assert_equal "Spain", robot_repository.find(robot_id).state
+    assert_equal "01/01/2007", robot_repository.find(robot_id1).date_hired
+    assert_equal "F1 Driver Robot", robot_repository.find(robot_id).department
   end
 
   def test_we_can_update_our_robots_info
-    skip
-    robot_repository.create({
-      :id => 1,
+    robot_id = robot_repository.create({
       :name => "Sebastian Vettel",
       :city => "Happenheim",
       :state => "Germany",
@@ -103,15 +99,14 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(1)
+    robot = robot_repository.find(robot_id)
 
-    assert_equal.update(1, {city: "Stockholm", state: "Sweden"})
-    assert_equal "Stockholm", robot_repository.find(1).city
+    robot_repository.update(robot_id, {city: "Stockholm"})
+    assert_equal "Stockholm", robot_repository.find(robot_id).city
   end
 
   def test_we_can_destroy_a_robot
-    robot_repository.create({
-      :id => 1,
+    robot_id = robot_repository.create({
       :name => "Sebastian Vettel",
       :city => "Happenheim",
       :state => "Germany",
@@ -121,24 +116,23 @@ class RobotRepositoryTest < Minitest::Test
       :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(1)
+    robot = robot_repository.find(robot_id)
 
-    robot_repository.create({
-      "id" => 2,
-      "name" => "Fernando",
-      "city" => "Jerez",
-      "state" => "Spain",
-      "avatar" => "https://robohash.org/Fernando",
-      "birthdate" => "07/29/1981",
-      "date_hired" => "01/01/2004",
-      "department" => "F1 Driver Robot"
+    robot_id1 = robot_repository.create({
+      :name => "Fernando",
+      :city => "Jerez",
+      :state => "Spain",
+      :avatar => "https://robohash.org/Fernando",
+      :birthdate => "07/29/1981",
+      :date_hired => "01/01/2004",
+      :department => "F1 Driver Robot"
       })
 
-    robot = robot_repository.find(2)
+    robot = robot_repository.find(robot_id1)
     assert_equal 2, robot_repository.all.length
-    robot_repository.destroy(1)
+    robot_repository.destroy(robot_id)
     assert_equal 1, robot_repository.all.length
-    robot_repository.destroy(2)
+    robot_repository.destroy(robot_id1)
     assert_equal 0, robot_repository.all.size
   end
 

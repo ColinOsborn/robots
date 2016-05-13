@@ -38,16 +38,11 @@ class RobotWorldApp < Sinatra::Base
     redirect "/robots"
   end
 
-  # def robot_repository
-  #   database = YAML::Store.new('db/robot_repository')
-  #   @robot_repository ||= RobotRepository.new(database)
-  # end
-
   def robot_repository
     if ENV['RACK_ENV'] == "test"
-      database = YAML::Store.new("db/robot_repository_test")
+      database = Sequel.postgres('robot_repository_test')
     else
-      database = YAML::Store.new('db/robot_repository')
+      database = Sequel.postgres('robot_repository')
     end
     @robot_repository ||= RobotRepository.new(database)
   end
